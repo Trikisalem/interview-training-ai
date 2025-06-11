@@ -19,18 +19,18 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* public routes */}
+        {/* Public routes */}
         <Route element={<PublicLayout />}>
           <Route index element={<HomePage />} />
         </Route>
 
-        {/* authentication layout */}
+        {/* Authentication routes */}
         <Route element={<AuthenticationLayout />}>
           <Route path="/signin/*" element={<SignInPage />} />
           <Route path="/signup/*" element={<SignUpPage />} />
         </Route>
 
-        {/* protected routes */}
+        {/* Protected routes */}
         <Route
           element={
             <ProtectRoutes>
@@ -38,15 +38,11 @@ const App = () => {
             </ProtectRoutes>
           }
         >
-          {/* add all the protect routes */}
           <Route element={<Generate />} path="/generate">
             <Route index element={<Dashboard />} />
             <Route path=":interviewId" element={<CreateEditPage />} />
             <Route path="interview/:interviewId" element={<MockLoadPage />} />
-            <Route
-              path="interview/:interviewId/start"
-              element={<MockInterviewPage />}
-            />
+            <Route path="interview/:interviewId/start" element={<MockInterviewPage />} />
             <Route path="feedback/:interviewId" element={<Feedback />} />
           </Route>
         </Route>
