@@ -1,50 +1,73 @@
-# React + TypeScript + Vite
+⚡ React + TypeScript + Vite Starter
+Ce projet est un template minimal pour démarrer rapidement une application React avec TypeScript et Vite, incluant une configuration de base d'ESLint et de Hot Module Replacement (HMR).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🧰 Technologies utilisées
+⚛️ React
 
-Currently, two official plugins are available:
+⚡ Vite
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🟦 TypeScript
 
-## Expanding the ESLint configuration
+📏 ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+🔁 Fast Refresh via @vitejs/plugin-react
 
-- Configure the top-level `parserOptions` property like this:
+🚀 Démarrage rapide
+bash
+Copier
+Modifier
+# 1. Cloner le dépôt
+git clone https://github.com/votre-utilisateur/nom-du-projet.git
+cd nom-du-projet
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+# 2. Installer les dépendances
+npm install
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# 3. Démarrer le serveur de développement
+npm run dev
+Accédez ensuite à http://localhost:5173 pour voir l'application.
 
-```js
+📦 Scripts disponibles
+Script	Description
+npm run dev	Démarre le serveur de développement
+npm run build	Build de production optimisé
+npm run preview	Lance un serveur local pour prévisualiser le build
+npm run lint	Analyse le code avec ESLint
+
+📐 Configuration ESLint recommandée
+Pour activer des règles de lint plus poussées et basées sur les types TypeScript :
+
+Modifiez le parserOptions comme suit :
+
+js
+Copier
+Modifier
+parserOptions: {
+  project: ['./tsconfig.node.json', './tsconfig.app.json'],
+  tsconfigRootDir: import.meta.dirname,
+}
+Utilisez une configuration avec typage strict :
+
+js
+Copier
+Modifier
+tseslint.configs.recommendedTypeChecked
+// ou
+tseslint.configs.strictTypeChecked
+Ajoutez les plugins React (ex : eslint-plugin-react) :
+
+js
+Copier
+Modifier
 // eslint.config.js
 import react from 'eslint-plugin-react'
 
 export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
+  settings: {
+    react: { version: '18.3' }, // ou détectée automatiquement
   },
+  plugins: { react },
   rules: {
-    // other rules...
-    // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
   },
 })
-```
