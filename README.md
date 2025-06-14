@@ -71,7 +71,10 @@ export default tseslint.config({
     ...react.configs.recommended.rules,
   },
 })
+## 📸 Aperçu du projet
+![Aperçu du projet](https://github.com/Trikisalem/interview-training-ai/raw/main/a.png)
 
+![Aperçu du projet](https://github.com/Trikisalem/interview-training-ai/raw/main/bb.png)
 
 ## 📸 Aperçu du projet
 ![Aperçu du projet](https://github.com/Trikisalem/interview-training-ai/raw/main/a.png)
