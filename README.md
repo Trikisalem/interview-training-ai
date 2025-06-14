@@ -71,3 +71,8 @@ export default tseslint.config({
     ...react.configs.recommended.rules,
   },
 })
+
+
+![image](https://github.com/user-attachments/assets/09af76d6-7bab-4d80-a4fe-d6bee804ef83)
+
+
