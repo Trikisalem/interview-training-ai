@@ -73,6 +73,7 @@ export default tseslint.config({
 })
 
 
-![image](https://github.com/user-attachments/assets/09af76d6-7bab-4d80-a4fe-d6bee804ef83)
+## 📸 Aperçu du projet
+![Aperçu du projet](https://github.com/Trikisalem/interview-training-ai/raw/main/a.png)
 
 
